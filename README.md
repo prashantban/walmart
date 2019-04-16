@@ -2,10 +2,11 @@
 Project Franklin
 
 ## Introduction
-This project uses NodeJs (Express) for BackEnd and ReactJs for FrontEnd
+This project uses NodeJs (Express, Typescript) for BackEnd and ReactJs for FrontEnd
 
 ### Requirements
 - nodejs v ~10.6
+- Typescript v ~3
 - Sqlite
 - ReactJs
 

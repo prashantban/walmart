@@ -10,7 +10,7 @@ const _module = "data/Database";
 export class Database {
 
     private static _instance:Database = new Database();
-    private static db : sqlite3.Database;
+    static db : sqlite3.Database;
 
     constructor() {
         if(Database._instance){
