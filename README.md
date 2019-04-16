@@ -1,5 +1,4 @@
-# walmart
-Project Franklin
+# Project Franklin
 
 ## Introduction
 This project uses NodeJs (Express, Typescript) for BackEnd and ReactJs for FrontEnd
