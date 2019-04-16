@@ -29,9 +29,17 @@ Promise.resolve()
 app.set("port", process.env.PORT || 3001);
 app.use(express.json());
 
+// Middleware to Log Out Every Request Coming to the System
 app.use((req: express.Request, _res: express.Response, next: express.NextFunction) => {
     logger.info({"module": "App", message : `Got a request from ${req.hostname} at ${Date.now()}`});
     next();
+});
+
+// Error Middleware
+app.use((err : any, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
+    logger.error({"module": "App", message : `Got Error Serving the request`, details : err});
+    // Send 500 for Now
+    res.status(500).send({error: err});
 });
 
 /**

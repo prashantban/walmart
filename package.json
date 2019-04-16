@@ -6,6 +6,10 @@
     "franklin",
     "walmart"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prashantban/walmart.git"
+  },
   "main": "./build/lib/server.js",
   "types": "./build/lib/server.d.ts",
   "scripts": {
@@ -28,9 +32,9 @@
   "author": "Prashant Bansal",
   "license": "ISC",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/prashantban/walmart/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/prashantban/walmart#readme",
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/express": "^4.16.1",
@@ -47,17 +51,14 @@
   },
   "readme": "README.md",
   "engines": {
-    "node": "=10.6.0"
+    "node": ">=10.6.0"
   },
   "files": [
     "build/**/*"
   ],
   "dependencies": {
-    "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "express-validator": "^5.3.1",
     "sinon": "^7.3.1",
-    "sqlite": "^3.0.3",
     "sqlite3": "^4.0.6",
     "winston": "^3.2.1"
   }
