@@ -37,3 +37,5 @@ This will start Server at `localhost:3001` & Client at `localhost:3000`
 - Add new Item
 - Delete Iteam
 - Update Order
+
+[![walmart.gif](https://i.postimg.cc/k5s7JR7v/walmart.gif)](https://postimg.cc/f3VG5LtV)
