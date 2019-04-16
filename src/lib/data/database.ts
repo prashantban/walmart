@@ -2,6 +2,11 @@ import sqlite3 from 'sqlite3';
 import logger from "../util/logger";
 const _module = "data/Database";
 
+
+/**
+ * Database DAO
+ * Singleton By Default
+ */
 export class Database {
 
     private static _instance:Database = new Database();
@@ -18,6 +23,7 @@ export class Database {
         return Database._instance;
     }
 
+    // Open a DB
     public openDb (dbFilePath : string) {
         Database.db = new sqlite3.Database(dbFilePath, (err) => {
             if (err) {
@@ -28,6 +34,7 @@ export class Database {
         })
     }
 
+    // Execute Query, return true on success
     public exec ({sql} : {sql : string}) : Promise<boolean> {
         logger.info({module : _module, message : `Executing ${sql}`});
         return new Promise<boolean>((resolve) => {
@@ -42,6 +49,7 @@ export class Database {
         })
     };
 
+    // Run the Given Query, Return ID of the Record
     public run ({sql, params = []} : {sql : string, params ?: Array<string>}) : Promise<any>{
         return new Promise<any>((resolve, reject) => {
             Database.db.run(sql, params, function (err) {
@@ -56,6 +64,7 @@ export class Database {
         })
     }
 
+    // Get a Single Resource
     public get({sql, params = []} : {sql : string, params ?: Array<string>}) {
         return new Promise((resolve, reject) => {
             Database.db.get(sql, params, (err, result) => {
@@ -69,6 +78,7 @@ export class Database {
         })
     }
 
+    // Return ALl records
     public all({sql, params = []} : {sql : string, params ?: Array<string>}) {
         return new Promise((resolve, reject) => {
             Database.db.all(sql, params, (err, rows) => {

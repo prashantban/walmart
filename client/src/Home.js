@@ -9,6 +9,8 @@ export default class Home extends Component {
         }
     }
 
+    // Update Component After Loading.
+    // Get the Data and Populate
     componentDidMount() {
         fetch('/api/v1/orders')
             .then(res => res.json())

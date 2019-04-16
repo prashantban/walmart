@@ -8,8 +8,7 @@ const _module = "controllers/api";
 const itemModel = new Items();
 
 /**
- * Define Home page route
- * Not using this here though
+ * Get A Single Item By ID
  */
 router.get('/:id', async (req, res, next) => {
     try {
@@ -24,6 +23,9 @@ router.get('/:id', async (req, res, next) => {
     }
 });
 
+/**
+ * Get All Items
+ */
 router.get('/', async (req, res, next) => {
     try {
         let items;
@@ -39,7 +41,9 @@ router.get('/', async (req, res, next) => {
     }
 });
 
-
+/**
+ * Create A New Item
+ */
 router.post('/', async (req, res, next) => {
     try {
         if (!req.body.name) {
@@ -58,6 +62,9 @@ router.post('/', async (req, res, next) => {
     }
 });
 
+/**
+ * Update A Single Item By ID
+ */
 router.put('/:id', async (req, res, next) => {
     try {
         if (!req.params.id || !req.body.name) {
@@ -72,6 +79,9 @@ router.put('/:id', async (req, res, next) => {
     }
 });
 
+/**
+ * Delete A Single Item By ID
+ */
 router.delete('/:id', async (req, res, next) => {
     try {
         if (!req.params.id) {

@@ -8,8 +8,7 @@ const _module = "controllers/api";
 const orderModel = new Orders();
 
 /**
- * Define Home page route
- * Not using this here though
+ * Get Single Order By ID
  */
 router.get('/:id', async (req, res, next) => {
     try {
@@ -24,6 +23,9 @@ router.get('/:id', async (req, res, next) => {
     }
 });
 
+/**
+ * Get All Orders
+ */
 router.get('/', async (_req, res, next) => {
     try {
         const orders = await orderModel.getAllOrders();
@@ -34,7 +36,9 @@ router.get('/', async (_req, res, next) => {
     }
 });
 
-
+/**
+ *  Create a New Order
+ */
 router.post('/', async (req, res, next) => {
     logger.info({module : _module, message : `Got Request`, details : req.body});
     try {
@@ -59,6 +63,10 @@ router.post('/', async (req, res, next) => {
     }
 });
 
+/**
+ * Add Items to a Order
+ */
+
 router.post('/:order_id/items', async (req, res, next) => {
     logger.info({module : _module, message : `Got Request to Update Items In Request`, details : req.body});
     try {
@@ -73,6 +81,10 @@ router.post('/:order_id/items', async (req, res, next) => {
         next(err);
     }
 });
+
+/**
+ * Update A Order By ID
+ */
 
 router.put('/:id', async (req, res, next) => {
     try {
@@ -92,6 +104,11 @@ router.put('/:id', async (req, res, next) => {
     }
 });
 
+/**
+ * Delete A Single Order By ID
+ * Also, Delete all the Foreign Key Records
+ */
+
 router.delete('/:id', async (req, res, next) => {
     try {
         if (!req.params.id) {
@@ -106,6 +123,9 @@ router.delete('/:id', async (req, res, next) => {
     }
 });
 
+/**
+ * Delete A Item inside a Order
+ */
 router.delete('/:order_id/items/:item_id', async (req, res, next) => {
     try {
         if (!req.params.order_id && !req.params.item_id) {

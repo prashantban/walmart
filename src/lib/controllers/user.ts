@@ -8,8 +8,7 @@ const _module = "controllers/user";
 const userModel = new Users();
 
 /**
- * Define Home page route
- * Not using this here though
+ * Get User By ID
  */
 router.get('/:id', async (req, res, next) => {
     try {
@@ -24,6 +23,10 @@ router.get('/:id', async (req, res, next) => {
     }
 });
 
+
+/**
+ * Get All Users
+ */
 router.get('/', async (_req, res, next) => {
     try {
         const users = await userModel.getAllUsers();
@@ -34,7 +37,9 @@ router.get('/', async (_req, res, next) => {
     }
 });
 
-
+/**
+ * Create a New User
+ */
 router.post('/', async (req, res, next) => {
     try {
         if (!req.body.name) {
@@ -53,6 +58,9 @@ router.post('/', async (req, res, next) => {
     }
 });
 
+/**
+ * Update User By ID
+ */
 router.put('/:id', async (req, res, next) => {
     try {
         if (!req.params.id || !req.body.name) {
@@ -67,6 +75,10 @@ router.put('/:id', async (req, res, next) => {
     }
 });
 
+/**
+ * Delete A Single User By ID
+ * Also, Delete all the Foreign Key Records
+ */
 router.delete('/:id', async (req, res, next) => {
     try {
         if (!req.params.id) {

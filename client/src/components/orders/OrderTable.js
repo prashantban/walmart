@@ -15,7 +15,7 @@ export class OrderTable extends React.Component {
         };
     }
 
-    isExpandableRow = (row) => true;
+    isExpandableRow = (_row) => true;
 
     onAddRow = (row) => {
         const items = this.props.orders;
@@ -40,7 +40,6 @@ export class OrderTable extends React.Component {
 
     expandColumnComponent = ({ isExpandableRow, isExpanded }) => {
         let content = '';
-
         if (isExpandableRow) {
             content = (isExpanded ? '(-)' : '(+)' );
         } else {

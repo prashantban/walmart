@@ -1,5 +1,6 @@
 import winston from "winston";
 
+// Logger to Log Out Messages
 const logger = winston.createLogger({
     level: 'info',
     format: winston.format.json(),

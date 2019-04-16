@@ -7,6 +7,7 @@ import { Layout } from './components/Layout';
 import { Navigation } from './components/Navigation';
 import { Jumbotron } from './components/Jumbotron';
 
+// Using BrowserRouter to Define Navigations
 class App extends Component {
     render() {
         return (

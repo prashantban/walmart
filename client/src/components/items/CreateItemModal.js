@@ -10,8 +10,6 @@ export default class CreateItemModal extends React.Component {
         }
     }
 
-    componentWillMount() {}
-
     handleSaveBtnClick = () => {
         const { onSave } = this.props;
         const newRow = {};
