@@ -1,4 +1,4 @@
-# Project Franklin
+# Order App Using Node, React, TypeScript, SQLITE
 
 ## Introduction
 This project uses NodeJs (Express, Typescript) for BackEnd and ReactJs for FrontEnd
