@@ -1,14 +1,17 @@
 {
-  "name": "franklin",
+  "name": "order_node_react_typescript",
   "version": "0.0.0",
-  "description": "Project Franklin Take Home Test",
+  "description": "Order Management App Built Using Node React & TypeScript",
   "keywords": [
-    "franklin",
-    "walmart"
+    "node",
+    "react",
+    "typescript",
+    "sqlite",
+    "order management"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/prashantban/walmart.git"
+    "url": "git+https://github.com/prashantban/order_node.git"
   },
   "main": "./build/lib/server.js",
   "types": "./build/lib/server.d.ts",
@@ -32,9 +35,9 @@
   "author": "Prashant Bansal",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/prashantban/walmart/issues"
+    "url": "https://github.com/prashantban/order_node/issues"
   },
-  "homepage": "https://github.com/prashantban/walmart#readme",
+  "homepage": "https://github.com/prashantban/order_node#readme",
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/express": "^4.16.1",
